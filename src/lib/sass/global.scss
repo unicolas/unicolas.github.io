@@ -1,0 +1,92 @@
+@use '@carbon/styles/scss/grid';
+@use '@carbon/styles/scss/type';
+@use '@carbon/styles/scss/spacing';
+@use '@carbon/styles/scss/themes';
+@use '@carbon/styles/scss/theme' with (
+  $theme: themes.$g90
+);
+// Components
+@use '@carbon/styles/scss/components/list';
+@use '@carbon/styles/scss/components/link';
+@use '@carbon/styles/scss/components/tag';
+@use '@carbon/styles/scss/components/data-table';
+@use '@carbon/styles/scss/components/ui-shell';
+
+:root {
+  @include theme.theme();
+  @include type.reset();
+  @include type.font-family('sans');
+  background-color: theme.$background;
+  color: theme.$text-primary;
+  overflow-x: hidden;
+  margin: 0;
+}
+body {
+  margin: 0;
+  padding-top: 3rem;
+}
+code {
+  @include type.font-family('mono');
+  @include type.type-style('code-02');
+}
+p {
+  @include type.type-style('body-02');
+  white-space: pre-wrap;
+}
+p code,
+li code,
+td code {
+  background-color: theme.$layer-02;
+  border-radius: 4px;
+  color: theme.$text-primary;
+  display: inline;
+  padding: 0 0.5em;
+  position: relative;
+}
+pre {
+  padding: spacing.$spacing-05;
+  tab-size: 2;
+  overflow-x: auto;
+}
+pre code {
+  counter-reset: step;
+  counter-increment: step 0;
+
+  & .line::before {
+    content: counter(step);
+    counter-increment: step;
+    width: 1rem;
+    margin-right: 1.25rem;
+    display: inline-block;
+    text-align: right;
+    color: theme.$text-disabled;
+  }
+}
+hr {
+  margin: 1rem 0px;
+  border: none;
+  height: 0.0625rem;
+  background: theme.$border-strong;
+  width: 3rem;
+}
+.cds--link {
+  font-size: inherit;
+}
+.cds--list--ordered:not(.cds--list--nested) {
+  margin-left: 1rem;
+}
+.cds--list--ordered:not(.cds--list--nested) > .cds--list__item::before {
+  position: absolute;
+  left: calc(-1 * 1rem);
+}
+.cds--list--ordered,
+.cds--list--unordered {
+  font-size: 100%;
+}
+.footnotes .cds--list--ordered {
+  @include type.type-style('caption-02');
+}
+.footnotes .cds--list--ordered code,
+td code {
+  @include type.type-style('code-01');
+}

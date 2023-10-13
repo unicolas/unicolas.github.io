@@ -41,10 +41,9 @@
       icon={LogoLinkedin}
     />
     <HeaderAction
-      href="{base}/feed"
+      href="{base}/feed.atom"
       icon={Rss}
-      target="_blank"
-      type="application/xml"
+      type="application/atom+xml"
     />
   </HeaderGlobal>
   <SideMenu {open}>

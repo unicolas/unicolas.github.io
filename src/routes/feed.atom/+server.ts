@@ -9,7 +9,7 @@ export const GET = async ({ fetch }) => {
   const feed = `<?xml version="1.0" encoding="utf-8"?>
   <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Blog | Nicolás Urquiola</title>
-    <link rel="self" href="https://unicolas.github.io${base}/feed" />
+    <link rel="self" href="https://unicolas.github.io${base}/feed.atom" />
     <updated>${new Date(posts[0].date).toISOString()}</updated>
     <author>
       <name>Nicolás Urquiola</name>
@@ -31,6 +31,6 @@ export const GET = async ({ fetch }) => {
   </feed>`;
 
   return new Response(feed, {
-    headers: { 'Content-Type': 'application/xml' }
+    headers: { 'Content-Type': 'application/atom+xml' }
   });
 };

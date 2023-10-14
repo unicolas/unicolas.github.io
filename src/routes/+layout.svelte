@@ -1,5 +1,6 @@
 <script>
   import '$lib/sass/global.scss';
+  import { base } from '$app/paths';
   import { page } from '$app/stores';
   import { Rss, LogoGithub, LogoLinkedin } from 'carbon-icons-svelte';
   import {
@@ -11,7 +12,8 @@
     SideMenu,
     SideMenuItem
   } from '$lib/components';
-  import { base } from '$app/paths';
+  import '@fontsource/ibm-plex-mono';
+  import '@fontsource/ibm-plex-sans';
 
   let open = false;
   $: menues = [

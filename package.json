@@ -36,6 +36,8 @@
   },
   "type": "module",
   "dependencies": {
+    "@fontsource/ibm-plex-mono": "^5.0.8",
+    "@fontsource/ibm-plex-sans": "^5.0.15",
     "clipboard-copy": "^4.0.1",
     "shiki": "^0.14.3"
   }

@@ -6,6 +6,7 @@ tags:
   - servant
   - jwt
 published: true
+updated: '2023-10-29'
 ---
 
 [Servant auth server](https://hackage.haskell.org/package/servant-auth-server) provides JWT authentication already but there's no much room for customisation, for example we cannot control expiration times independently of the cookie.
@@ -103,7 +104,7 @@ accessClaims userId issuedAt = emptyClaimsSet
 accessSettings :: JWTValidationSettings
 accessSettings = defaultJWTValidationSettings (== "access")
 ```
-We'll parameterise the user identifier and the issued-at time to the constructor and set the rest of the claims as we wanted for this token type (expire in 15 minutes since issued and "access" as audience).
+We'll parameterise the user identifier and the issued-at time to the constructor and set the rest of the claims as we wanted for this token type (expire in 15 minutes since issued and &ldquo;access&rdquo; as audience).
 And then the refresh token claim set counterpart `RefreshClaims`: 
 ```hs
 newtype RefreshClaims = RefreshClaims ClaimsSet
@@ -125,7 +126,7 @@ refreshClaims userId issuedAt = emptyClaimsSet
 refreshSettings :: JWTValidationSettings
 refreshSettings = defaultJWTValidationSettings (== "refresh")
 ```
-The important bits here are the expiration time set to 1 day and it's "refresh" audience, also changed for the validation settings. 
+The important bits here are the expiration time set to 1 day and it's &ldquo;refresh&rdquo; audience, also changed for the validation settings. 
 With this distinction in audience, we are able to require a concrete token type and to reject the use of one type in place of another, i.e. refresh tokens won't be valid access tokens and viceversa.
 
 ### Generalised auth
@@ -151,6 +152,8 @@ type AuthJwtRefresh = AuthProtect "jwt-refresh"
 ```
 Now we can use them to protect the endpoint `POST /refresh` with `AuthJwtRefresh` and some sub-API with `AuthJwtAccess`. The login endpoint won't be protected, naturally.
 ```hs
+type Json = '[JSON]
+
 data Api mode = Api
   { login :: mode
       -- POST /login
@@ -173,7 +176,7 @@ newtype SecuredRoutes mode = SecuredRoutes
       -- GET /users/{userId}
       :- "users"
       :> Capture "userId" UUID
-      :> Http.Get Json User
+      :> Get Json User
   }
   deriving Generic
 ```

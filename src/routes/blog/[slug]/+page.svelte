@@ -4,12 +4,13 @@
   import { formattedDate } from '$lib/helpers';
 
   export let data;
+  const title = `${data.meta.title} | Nicolás Urquiola`;
 </script>
 
 <svelte:head>
-  <title>{data.meta.title} | Nicolás Urquiola</title>
+  <title>{title}</title>
   <meta property="og:type" content="article" />
-  <meta property="og:title" content={data.meta.title} />
+  <meta property="og:title" content={title} />
 </svelte:head>
 
 <article>

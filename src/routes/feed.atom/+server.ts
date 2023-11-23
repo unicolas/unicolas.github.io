@@ -33,6 +33,6 @@ export const GET = async ({ fetch }) => {
   </feed>`;
 
   return new Response(feed, {
-    headers: { 'Content-Type': 'application/atom+xml' }
+    headers: { 'Content-Type': 'application/atom+xml;charset=utf-8' }
   });
 };

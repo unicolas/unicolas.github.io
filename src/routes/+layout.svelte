@@ -37,15 +37,21 @@
     {/each}
   </HeaderMenu>
   <HeaderGlobal>
-    <HeaderAction href="https://github.com/unicolas" icon={LogoGithub} />
+    <HeaderAction
+      href="https://github.com/unicolas"
+      icon={LogoGithub}
+      aria-label="My Github profile"
+    />
     <HeaderAction
       href="https://www.linkedin.com/in/nicolas-urquiola/"
       icon={LogoLinkedin}
+      aria-label="My linkedIn profile"
     />
     <HeaderAction
       href="{base}/feed.atom"
       icon={Rss}
       type="application/atom+xml"
+      aria-label="Blog's Atom feed"
     />
   </HeaderGlobal>
   <SideMenu {open}>

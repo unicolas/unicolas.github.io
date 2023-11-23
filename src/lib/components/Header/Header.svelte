@@ -9,6 +9,7 @@
   <button
     class="cds--header__action cds--header__menu-trigger cds--header__menu-toggle cds--header__menu-toggle__hidden"
     on:click={() => (open = !open)}
+    aria-label={open ? 'Close menu' : 'Open menu'}
     ><svelte:component this={open ? Close : Menu} size={20} /></button
   >
   <a href="/" class="cds--header__name" style:padding="0 1rem">{name}</a>

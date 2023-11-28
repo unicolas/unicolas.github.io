@@ -6,6 +6,7 @@ tags:
   - case analysis
   - lambda calculus
 published: true
+updated: '2023-11-28'
 ---
 
 [Scott encodings](https://en.wikipedia.org/wiki/Mogensen–Scott_encoding) of algebraic data types can be taken as a medium to represent these types in an untyped object-oriented setting that supports lambdas and closures for an alternative to pattern-matching. With this approach we construct λ-terms from the constructors and eliminators of an ADT, to later translate them into a single-class protocol or, for a result more akin to OOP, split by constructor into a hierarchy where the implementation can be derived by observing the reductions of the λ-terms for each value. The latter will lead to the subtyping approach of case analysis observed in [a previous post](2023-10-13-oop-classes-as-data-constructors).
@@ -82,7 +83,8 @@ ScottBoolean >> caseTrue: t caseFalse: f [
 Container types are expressed in λ-calculus by means of closures and continuations.
 
 **Pair**
-This product type has only one constructor `Pair` and two eliminators: the projections functions `fst` and `snd` that we get to encode as follows:
+
+This product type has only one constructor `Pair` and two eliminators: the projection functions `fst` and `snd` that we get to encode as follows:
 
 ```
 PAIR = λa b p. p a b
@@ -162,7 +164,7 @@ If we reduce for instance `MAYBE (JUST 0)` we get the partial application `JUST 
 ```
 Once more, we find `MAYBE = ID`.
 
-The protocol is set to the instance creation methods `makeNothing` and `makeJust:` and a `caseNothing:caseJust:` for the pattern-matching `MAYBE`.
+The protocol is set to the instance creation methods `makeNothing` and `makeJust:`, plus `caseNothing:caseJust:` for the pattern-matching `MAYBE`.
 
 ```smalltalk
 Class {

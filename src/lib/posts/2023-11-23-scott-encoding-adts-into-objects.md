@@ -313,7 +313,7 @@ Since we have direct support for recursion, we have no need to eliminate it for 
 ScottList >> foldr: f into: a [
 
   ^self 
-    caseNil: a
+    caseNil: [a]
     caseCons: [:h :t | f value: h value: (t foldr: f into: a)]
 ]
 ```
@@ -360,8 +360,8 @@ Again, we can implement this fold with recursion:
 ScottList >> foldl: f into: a [
 
   ^self 
-    caseNil: a
-    caseCons: [:h :t | f value: h value: (t fold: f into: a)]
+    caseNil: [a]
+    caseCons: [:h :t | t foldl: f into: (f value: a value: h)]
 ]
 ```
 

@@ -1,6 +1,7 @@
 import { base } from '$app/paths';
 import { lastUpdated } from '$lib/helpers';
 import type { Post } from '$lib/types';
+import { DOMAIN } from '$env/static/private';
 
 export const prerender = true;
 
@@ -19,18 +20,18 @@ export const GET = async ({ fetch }) => {
 			xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
 		>
     <url>
-      <loc>https://unicolas.github.io${base}</loc>
+      <loc>https://${DOMAIN}${base}</loc>
       <lastmod>${updated}</lastmod>
     </url>
     <url>
-      <loc>https://unicolas.github.io${base}/blog</loc>
+      <loc>https://${DOMAIN}${base}/blog</loc>
       <lastmod>${updated}</lastmod>
     </url>
     ${posts
       .map(
         (post) => `
       <url>
-        <loc>https://unicolas.github.io${base}/blog/${post.slug}</loc>
+        <loc>https://${DOMAIN}${base}/blog/${post.slug}</loc>
         <lastmod>${new Date(post.updated ?? post.date).toISOString()}</lastmod>
       </url>`
       )

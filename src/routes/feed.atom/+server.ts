@@ -1,6 +1,7 @@
 import { base } from '$app/paths';
 import { lastUpdated } from '$lib/helpers';
 import type { Post } from '$lib/types';
+import { DOMAIN } from '$env/static/private';
 
 export const prerender = true;
 
@@ -11,19 +12,19 @@ export const GET = async ({ fetch }) => {
   const feed = `<?xml version="1.0" encoding="utf-8"?>
   <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Blog | Nicolás Urquiola</title>
-    <link rel="self" href="https://unicolas.github.io${base}/feed.atom" />
+    <link rel="self" href="https://${DOMAIN}${base}/feed.atom" />
     <updated>${new Date(updated).toISOString()}</updated>
     <author>
       <name>Nicolás Urquiola</name>
     </author>
-    <id>https://unicolas.github.io${base}</id>
+    <id>https://${DOMAIN}${base}</id>
     ${posts
       .map(
         (post) => `
     <entry>
       <title>${post.title}</title>
-      <id>https://unicolas.github.io${base}/blog/${post.slug}</id>
-      <link href="https://unicolas.github.io${base}/blog/${
+      <id>https://${DOMAIN}${base}/blog/${post.slug}</id>
+      <link href="https://${DOMAIN}${base}/blog/${
           post.slug
         }" type="text/html" />
       <updated>${new Date(post.updated ?? post.date).toISOString()}</updated>

@@ -6,7 +6,7 @@ tags:
   - servant
   - jwt
 published: true
-updated: '2023-10-29'
+updated: '2023-12-09'
 ---
 
 [Servant auth server](https://hackage.haskell.org/package/servant-auth-server) provides JWT authentication already but there's no much room for customisation, for example we cannot control expiration times independently of the cookie.
@@ -79,7 +79,7 @@ For each token type we want to set the following [registered claims](https://www
 | `exp` | 1 day                                           |
 | `aud` | `"refresh"` to identify this as a refresh token |
 
-We'll be using [jose](https://hackage.haskell.org/package/jose) for producing and verifying the JWT. So let's define two newtype wrappers for `ClaimsSet`, one for each token type and their required typeclass intances: `FromJSON`, `ToJSON` and `HasClaimSet`.
+We'll be using [jose](https://hackage.haskell.org/package/jose) for producing and verifying the JWT. So let's define two newtype wrappers for `ClaimsSet`, one for each token type and their required typeclass instances: `FromJSON`, `ToJSON` and `HasClaimSet`.
 Let's also add their smart constructors and validation settings with the correct audience check on top of the default settings.
 
 First, the access token claim set `AccessClaims`:
@@ -127,7 +127,7 @@ refreshSettings :: JWTValidationSettings
 refreshSettings = defaultJWTValidationSettings (== "refresh")
 ```
 The important bits here are the expiration time set to 1 day and it's &ldquo;refresh&rdquo; audience, also changed for the validation settings. 
-With this distinction in audience, we are able to require a concrete token type and to reject the use of one type in place of another, i.e. refresh tokens won't be valid access tokens and viceversa.
+With this distinction in audience, we are able to require a concrete token type and to reject the use of one type in place of another, i.e. refresh tokens won't be valid access tokens and vice versa.
 
 ### Generalised auth
 
@@ -312,7 +312,7 @@ securedHandlers _ = throw err401
 
 ### Final notes
 
-Bear in mind that Servant's generalised authentication API is considered experimental nowadays. It's simple yet powerful, it gave us the means to work out our particular atuhentication scheme without any hassle.
+Bear in mind that Servant's generalised authentication API is considered experimental nowadays. It's simple yet powerful, it gave us the means to work out our particular authentication scheme without any hassle.
 There's one thing we will be missing from Servant auth server and that is its `ThrowAll` typeclass that helps in reducing the boilerplate needed to throw authentication errors for a whole sub-API.
 You can find the full implementation [here](https://github.com/unicolas/example-generalised-auth).
 

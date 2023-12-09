@@ -6,6 +6,7 @@ tags:
   - smalltalk
   - haskell
 published: true
+updated: '2023-12-09'
 ---
 
 In FP, pattern matching is used to act based on the structure of data, to know what the constructor of a value is. In OOP this mechanism is not available but this intent can be achieved with subtyping, and this is possible because we can encode the same semantics with both data constructors and classes.
@@ -30,7 +31,7 @@ not False = True
 
 That is, a function that takes a bool and gives you back another bool. Here we pattern-match against the argument to determine if it was constructed by means of `True` or `False` and produce a new value accordingly: if the argument was constructed using `True` we know we encoded a _true_ whose negation is _false_ and the constructor encoding this value is `False`. On the contrary, if the argument was constructed using `False` we have the other way round.
 
-Now, let's see booleans implemeted in Smalltalk[^1]:
+Now, let's see booleans implemented in Smalltalk[^1]:
 
 ```smalltalk
 Class {
@@ -53,7 +54,7 @@ Class {
 }
 ```
 
-We have a class hierarchy consisting of one abstract class (`Boolean`) and two concrete subclasses (`True` and `False`) each encoding the logical values. Observe that there's no construct in the language to declare a class as abstract, so that the class method `new` inherited from `Object` is just overriden to throw an error for this purpose, and that the sole instances of `True` and `False` are the pseudo-variables `true` and `false` respectively (i.e. they are singleton instances).
+We have a class hierarchy consisting of one abstract class (`Boolean`) and two concrete subclasses (`True` and `False`) each encoding the logical values. Observe that there's no construct in the language to declare a class as abstract, so that the class method `new` inherited from `Object` is just overridden to throw an error for this purpose, and that the sole instances of `True` and `False` are the pseudo-variables `true` and `false` respectively (i.e. they are singleton instances).
 
 This use of classes to encode values is what let us decide in a similar fashion with the aid of dynamic dispatch, since there's one &#8220;constructor&#8221; class for each possible value, the object oriented implementation for `not` should be of no surprise:
 

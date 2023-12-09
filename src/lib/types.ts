@@ -4,6 +4,7 @@ export type Post = {
   date: string;
   tags: string[];
   published: boolean;
+  description: string;
   updated?: string;
 };
 

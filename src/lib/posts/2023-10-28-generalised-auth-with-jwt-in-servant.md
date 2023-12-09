@@ -6,6 +6,7 @@ tags:
   - servant
   - jwt
 published: true
+description: 'How-to guide for a customised JWT authentication scheme using generalised auth in Servant.'
 updated: '2023-12-09'
 ---
 

@@ -5,10 +5,12 @@
 
   export let data;
   const title = `${data.meta.title} | Nicolás Urquiola`;
+  const description = `${data.meta.description} ${data.meta.tags.join(', ')}`;
 </script>
 
 <svelte:head>
   <title>{title}</title>
+  <meta name="description" content={description} />
   <meta property="og:type" content="article" />
   <meta property="og:title" content={title} />
 </svelte:head>

@@ -6,6 +6,7 @@ tags:
   - smalltalk
   - haskell
 published: true
+description: 'Comparison of case analysis techniques in a functional language and an object oriented one: pattern-matching and subtyping.'
 updated: '2023-12-09'
 ---
 

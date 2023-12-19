@@ -1,6 +1,6 @@
 <script lang="ts">
   import { base } from '$app/paths';
-  import { Eyebrow, HeadingLink, Tag, TagGroup } from './';
+  import { Description, Eyebrow, HeadingLink, Tag, TagGroup } from './';
   import { formattedDate } from '$lib/helpers';
   import type { Post } from '$lib/types';
 
@@ -12,6 +12,7 @@
     <li class="post">
       <Eyebrow>{formattedDate(post.date)}</Eyebrow>
       <HeadingLink href="{base}/blog/{post.slug}">{post.title}</HeadingLink>
+      <Description>{post.description}</Description>
       <TagGroup>
         {#each post.tags as tag}
           <Tag href={`${base}/blog/tags/${tag}`} name={tag} />

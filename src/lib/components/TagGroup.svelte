@@ -6,7 +6,9 @@
   @use '@carbon/styles/scss/spacing';
 
   .tag-group {
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: spacing.$spacing-02;
     padding-top: spacing.$spacing-03;
   }

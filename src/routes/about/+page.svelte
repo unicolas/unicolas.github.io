@@ -3,6 +3,10 @@
   import Link from '$lib/components/Link.svelte';
 </script>
 
+<svelte:head>
+  <title>About | Nicolás Urquiola</title>
+</svelte:head>
+
 <Heading>Hi!</Heading>
 <p>
   {"My name is Nicolás Urquiola and I'm a software developer from Argentina."}

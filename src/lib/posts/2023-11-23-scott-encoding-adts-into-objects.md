@@ -6,7 +6,7 @@ tags:
   - case analysis
   - lambda calculus
 published: true
-description: 'Case analysis through scott encodings of algebraic data types in an object oriented programming language.'
+description: 'Case analysis through Scott encodings of algebraic data types in an object oriented programming language.'
 updated: '2023-11-29'
 ---
 

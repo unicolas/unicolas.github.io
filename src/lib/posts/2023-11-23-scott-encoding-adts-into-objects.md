@@ -548,8 +548,8 @@ We can implement it using recursion:
 ```smalltalk
 ScottStream class >> iterate: f from: a [
 
-  ^ScottStream makeCons: a with: [:delay |
-    delay value: (ScottStream iterate: f from: (f value: a))
+  ^self makeSCons: a with: [:delay |
+    delay value: (self iterate: f from: (f value: a))
   ]
 ]
 ```
@@ -563,7 +563,7 @@ ScottStream class >> fixIterate: f from: a [
 
   ^(Fix rec2: [:iterate |
     [:f1 :a1 |
-      ScottStream makeCons: a1 with: [:delay |
+      self makeSCons: a1 with: [:delay |
         delay value: (iterate value: f1 value: (f1 value: a1))
       ]
     ]
@@ -631,7 +631,7 @@ And its implementation is then straightforward:
 ```smalltalk
 ScottStream >> interleave: s [
 
-  ^ScottStream makeSCons: self head with: [:delay |
+  ^self class makeSCons: self head with: [:delay |
     delay value: (s interleave: self tail)
   ]
 ]

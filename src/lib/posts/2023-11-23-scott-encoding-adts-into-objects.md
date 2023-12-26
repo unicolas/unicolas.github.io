@@ -7,7 +7,7 @@ tags:
   - lambda calculus
 published: true
 description: 'Case analysis through Scott encodings of algebraic data types in an object oriented programming language.'
-updated: '2023-11-29'
+updated: '2023-12-26'
 ---
 
 [Scott encodings](https://en.wikipedia.org/wiki/Mogensen–Scott_encoding) of algebraic data types can be taken as a medium to represent these types in an untyped object-oriented setting that supports lambdas and closures for an alternative to pattern-matching. With this approach we construct λ-terms from the constructors and eliminators of an ADT, to later translate them into a single-class protocol or, for a result more akin to OOP, split by constructor into a hierarchy where the implementation can be derived by observing the reductions of the λ-terms for each value. The latter will lead to the subtyping approach of case analysis observed in [a previous post](2023-10-13-oop-classes-as-data-constructors).

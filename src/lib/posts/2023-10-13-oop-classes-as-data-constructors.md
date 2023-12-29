@@ -6,15 +6,15 @@ tags:
   - smalltalk
   - haskell
 published: true
-description: 'Comparison of case analysis techniques in a functional language and an object oriented one: pattern-matching and subtyping.'
-updated: '2023-12-09'
+description: 'Comparison of case analysis techniques in a functional language and an object-oriented one: pattern-matching and subtyping.'
+updated: '2023-12-29'
 ---
 
-In FP, pattern matching is used to act based on the structure of data, to know what the constructor of a value is. In OOP this mechanism is not available but this intent can be achieved with subtyping, and this is possible because we can encode the same semantics with both data constructors and classes.
+In functional programming (FP), pattern matching is used to act based on the structure of data, to know what the constructor of a value is. In object-oriented programming (OOP) this mechanism is not available but this intent can be achieved with subtyping, and this is possible because we can encode the same semantics with both data constructors and classes.
 
 To see what this means, let's start by comparing how operations on booleans are solved in these two languages: Haskell for FP and Smalltalk for OOP.
 
-Consider the following ADT that represents booleans in Haskell:
+Consider the following algebraic data type (ADT) that represents booleans in Haskell:
 
 ```hs
 data Bool = False | True
@@ -229,6 +229,6 @@ Even though this is the object-oriented way of doing case analysis, it is not se
 - Exhaustiveness can be checked with pattern matching but not using subtyping since we cannot know in advance all the implementors for the method[^4].
 
 [^1]: Specifically in [Pharo](https://pharo.org) and its [tonel](https://github.com/pharo-vcs/tonel) file format, but this examples can be adapted to any Smalltalk-80 implementation.
-[^2]: For completeness, *λx. t*  would be written as `[ :x | t ]`, a `BlockClosure` instance that gets evaluated using its `value` method family, so that *λx. t s* translates to `[ :x | t ] value: s`.
+[^2]: For completeness, *λx. t*  would be written as `[:x | t]`, a `BlockClosure` instance that gets evaluated using its `value` method family, so that *(λx. t) s* translates to `[:x | t] value: s`.
 [^3]: &#8220;A subclass that provides special behavior for particular cases&#8221; &#8212; see [Special Case](https://martinfowler.com/eaaCatalog/specialCase.html) entry in Martin Fowler's Catalog of Patterns of Enterprise Application Architecture.
 [^4]: Scala addresses this problem with sealed classes and traits.

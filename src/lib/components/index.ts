@@ -3,6 +3,7 @@ export { default as Description } from './Description.svelte';
 export { default as Eyebrow } from './Eyebrow.svelte';
 export { default as Heading } from './Heading.svelte';
 export { default as HeadingLink } from './HeadingLink.svelte';
+export { default as Image } from './Image.svelte';
 export { default as Link } from './Link.svelte';
 export { default as List } from './List.svelte';
 export { default as OrderedList } from './OrderedList.svelte';

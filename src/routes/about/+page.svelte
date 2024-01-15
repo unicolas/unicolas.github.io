@@ -10,7 +10,7 @@
 <Heading>Hi!</Heading>
 <p>
   {"My name is Nicolás Urquiola and I'm a software developer from Argentina."}
-  {"I'll drop some of my thoughts and ideas about programming here, but don't expect too much."}
+  {"I write about programming topics I'm getting my head around."}
   {"I'd rather be napping."}
 </p>
 <p>

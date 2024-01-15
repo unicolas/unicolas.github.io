@@ -13,6 +13,7 @@
 @use '@carbon/styles/scss/components/ui-shell';
 @use '@carbon/styles/scss/components/tile';
 @use '@carbon/styles/scss/components/aspect-ratio';
+@use '@carbon/styles/scss/components/notification';
 
 :root {
   @include theme.theme();

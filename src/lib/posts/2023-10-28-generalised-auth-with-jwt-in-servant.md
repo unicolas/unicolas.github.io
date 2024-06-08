@@ -7,7 +7,7 @@ tags:
   - jwt
 published: true
 description: 'How-to guide for a customised JWT authentication scheme using generalised auth in Servant.'
-updated: '2023-12-09'
+updated: '2024-06-08'
 ---
 
 [Servant auth server](https://hackage.haskell.org/package/servant-auth-server) provides JWT authentication already but there's no much room for customisation, for example we cannot control expiration times independently of the cookie.
@@ -56,7 +56,7 @@ Content-Length: 0
   "refresh": "xx.yyy.zzz"
 }
 ```
-`POST` is used here as it's common for controller resources. `GET` won't fit at all if this would mean a state change, like storing access tokens for invalidation purposes, since it won't be idempotent.
+`POST` is used here as it's common for controller resources. `GET` won't fit at all if this would mean a state change, like storing tokens for invalidation purposes, since it won't be idempotent.
 
 ### JWT
 
@@ -221,8 +221,8 @@ verifyToken :: (HasClaimsSet a, FromJSON a)
   => JWK -> JWTValidationSettings -> ByteString -> IO (Maybe a)
 verifyToken jwk settings token = maybeRight <$> runJOSE @JWTError verify
   where
-    verify = decodeCompact lazy >>= verifyJWT settings jwk
-    lazy = LazyByteString.fromString (ByteString.toString token)
+    verify = decode token >>= verifyJWT settings jwk
+    decode = ByteString.toString >>> LazyByteString.fromString >>> decodeCompact
 ```
 
 **AuthServerData** is an open type family for a `HasServer` instance that binds the `AuthHandler` from the context to the `AuthProtect` combinator.
@@ -264,28 +264,22 @@ api jwk = Api
   }
 ```
 
-On login, we check the credentials provided in the login request to be valid for a registered user (a dummy check for the sake of simplicity) and then construct the login response with the access and refresh claims for this user.
+On login, we check the credentials provided in the login request to be valid for a registered user (a dummy check for the sake of simplicity) and then construct the login response by signing both the access and refresh claim sets for this user with the JWK.
 
 ```hs
-loginHandler :: (MonadThrow m, MonadIO m) 
-  => JWK -> LoginRequest -> m LoginResponse
-loginHandler jwk LoginRequest {..} = do
+loginHandler :: MonadIO m => JWK -> LoginRequest -> m LoginResponse
+loginHandler jwk LoginRequest {username, password} = liftIO $ do
   unless (username == "user" && password == "12345") (throwM err401)
-  do
-    now <- liftIO getCurrentTime
-    loginResponse jwk (accessClaims nil now) (refreshClaims nil now)
-```
-The login response is constructed by signing both claim sets with the JWK:
+  now <- getCurrentTime
+  signedAccess <- signToken jwk (accessClaims nil now)
+  signedRefresh <- signToken jwk (refreshClaims nil now)
+  makeLoginResponse [signedAccess, signedRefresh]
 
-```hs
-loginResponse :: (ToJSON a, ToJSON b, MonadThrow m, MonadIO m) 
-  => JWK -> a -> b -> m LoginResponse
-loginResponse jwk acc refr = do
-  signedAccess <- liftIO (signToken jwk acc)
-  signedRefresh <- liftIO (signToken jwk refr)
-  case (signedAccess, signedRefresh) of
-    (Just (toText -> access), Just (toText -> refresh)) -> pure LoginResponse {..}
-    _ -> throwM err401
+makeLoginResponse :: MonadThrow m => [Maybe SignedJWT] -> m LoginResponse
+makeLoginResponse = \case
+  [Just (toText -> access), Just (toText -> refresh)]
+    -> pure LoginResponse {access, refresh}
+  _ -> throwM err500 {errBody = "Failed to generate new tokens"}
   where
     toText = pack . toString . encodeCompact
 ```
@@ -296,9 +290,11 @@ We will be constructing a login response with a new access token for the same us
 ```hs
 refreshTokenHandler :: (MonadThrow m, MonadIO m)
   => JWK -> Maybe RefreshClaims -> m LoginResponse
-refreshTokenHandler jwk (Just claims@(subjectClaim -> Just uid)) = do
-  now <- liftIO getCurrentTime
-  loginResponse jwk (accessClaims uid now) claims
+refreshTokenHandler jwk (Just claims@(subjectClaim -> Just uid)) = liftIO $ do
+  now <- getCurrentTime
+  signedAccess <- signToken jwk (accessClaims uid now)
+  signedRefresh <- signToken jwk claims
+  makeLoginResponse [signedAccess, signedRefresh]
 refreshTokenHandler _ _ = throwM err401
 ```
 `subjectClaim` is a convenience function to get the subject claim back.

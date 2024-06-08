@@ -3,7 +3,7 @@
 @use '@carbon/styles/scss/spacing';
 @use '@carbon/styles/scss/themes';
 @use '@carbon/styles/scss/theme' with (
-  $theme: themes.$g90
+  $theme: themes.$g100
 );
 // Components
 @use '@carbon/styles/scss/components/list';
@@ -59,10 +59,12 @@ pre code {
     content: counter(step);
     counter-increment: step;
     width: 1rem;
-    margin-right: 1.25rem;
+    padding-right: spacing.$spacing-05;
+    margin-right: spacing.$spacing-05;
     display: inline-block;
     text-align: right;
-    color: theme.$text-disabled;
+    color: theme.$text-placeholder;
+    border-right: 1px solid theme.$border-subtle-02;
   }
 }
 hr {

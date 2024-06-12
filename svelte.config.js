@@ -17,7 +17,7 @@ const config = {
       highlight: {
         highlighter: async (code, lang = 'text') => {
           const highlighter = await shiki.getHighlighter({
-            theme: JSON.parse(fs.readFileSync('./one-dark-pro.json', 'utf-8'))
+            theme: JSON.parse(fs.readFileSync('./carbon.json', 'utf-8'))
           });
           const html = escapeSvelte(highlighter.codeToHtml(code, { lang }));
           return `{@html \`${html}\` }`;

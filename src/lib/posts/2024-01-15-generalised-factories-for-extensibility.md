@@ -7,6 +7,7 @@ tags:
   - haskell
 published: true
 description: 'An exploration of extensibility with object algebras in TypeScript and its relation to visitors and typed tagless final interpreters in Haskell.'
+updated: '2024-06-12'
 ---
 
 <script>
@@ -108,7 +109,7 @@ where `expr` expects to be applied to an interpreter, so that we can evaluate or
 
 ```ts
 const r1 = expr(new ExprPrint()).print(); // "3 + 1 + 2"
-const r2 = expr(new ExprEval()).eval();   // 5
+const r2 = expr(new ExprEval()).eval();   // 6
 ```
 
 We can observe that the addition of a new interpreter, as is the case with printing, did not require us to modify any of the existing code.
@@ -253,29 +254,21 @@ interface Expr {
 }
 
 class Lit implements Expr {
-  x: number;
-  constructor(x: number) {
-    this.x = x;
-  }
+  constructor(readonly x: number) {}
   accept<E>(v: Interpreter<E>): E {
     return v.visitLit(this);
   }
 }
 
 class Add implements Expr {
-  e1: Expr;
-  e2: Expr;
-  constructor(e1: Expr, e2: Expr) {
-    this.e1 = e1;
-    this.e2 = e2;
-  }
+  constructor(readonly e1: Expr, readonly e2: Expr) {}
   accept<E>(v: Interpreter<E>): E {
     return v.visitAdd(this);
   }
 }
 
 const expr = new Add(new Lit(3), new Add(new Lit(1), new Lit(2)));
-const r1 = expr.accept(new Eval());   // 5
+const r1 = expr.accept(new Eval());   // 6
 const r2 = expr.accept(new Print());  // "3 + 1 + 2"
 ```
 See we can add new interpreters without modifying existing code but can't do the same if we want to add new expressions. If we were to add for instance `Neg`, we would need to alter the `Interpreter` interface and all its implementations.
@@ -345,10 +338,10 @@ add :: CoExpr -> CoExpr -> CoExpr
 add e1 e2 = CoExpr (\\i -> visitAdd i (accept e1 i) (accept e2 i))
 
 eval :: CoExpr -> Int
-eval' c = accept c Interpreter { visitLit = id, visitAdd = (+) }
+eval c = accept c Interpreter { visitLit = id, visitAdd = (+) }
 
 print :: CoExpr -> String
-print' c = accept c Interpreter 
+print c = accept c Interpreter 
   { visitLit = show
   , visitAdd = \\e1 e2 -> e1 <> " + " <> e2
   }

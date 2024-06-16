@@ -34,21 +34,21 @@ That is, a function that takes a bool and gives you back another bool. Here we p
 
 Now, let's see booleans implemented in Smalltalk[^1]:
 
-```smalltalk
+```class.st
 Class {
 	#name : #Boolean,
 	#superclass : #Object
 }
 ```
 
-```smalltalk
+```class.st
 Class {
 	#name : #True,
 	#superclass : #Boolean
 }
 ```
 
-```smalltalk
+```class.st
 Class {
 	#name : #False,
 	#superclass : #Boolean
@@ -59,14 +59,14 @@ We have a class hierarchy consisting of one abstract class (`Boolean`) and two c
 
 This use of classes to encode values is what let us decide in a similar fashion with the aid of dynamic dispatch, since there's one &#8220;constructor&#8221; class for each possible value, the object oriented implementation for `not` should be of no surprise:
 
-```smalltalk
+```class.st
 True >> not [
 
 	^false
 ]
 ```
 
-```smalltalk
+```class.st
 False >> not [
 
 	^true
@@ -77,14 +77,14 @@ As it is characteristic of OOP, we don't need an argument here, the value to neg
 
 Interestingly, also conditionals are implemented this way in Smalltalk, `ifTrue:ifFalse:` takes two blocks (its own flavour of lambdas[^2]) as arguments and evaluates the one corresponding with the receiver:
 
-```smalltalk
+```class.st
 False >> ifTrue: trueAlternativeBlock ifFalse: falseAlternativeBlock [
 
 	^falseAlternativeBlock value
 ]
 ```
 
-```smalltalk
+```class.st
 True >> ifTrue: trueAlternativeBlock ifFalse: falseAlternativeBlock [
 
 	^trueAlternativeBlock value
@@ -128,7 +128,7 @@ From here we know that when the first list is empty we don't need to go further,
 
 We're going to encode these values in a hierarchy consisting of an abstract class `List` and two concrete subclasses: `Empty` for the empty list and `Cons` for the non-empty. Then our protocol consists of a `zip:` method between any two lists and `zipCons:` between any list and a non-empty list. For this particular case and from what we saw above, there's no need to add `zipEmpty:` to the family of methods.
 
-```smalltalk
+```class.st
 Class {
 	#name : #List,
 	#superclass : #Object
@@ -148,7 +148,7 @@ List >> zipCons: list [
 `zip:` and `zipCons:` implementations for `Empty` are as simple as returning a new empty list, cases 1 and 2:
 
 
-```smalltalk
+```class.st
 Class {
 	#name : #Empty,
 	#superclass : #List
@@ -170,7 +170,7 @@ Empty >> zipCons: list [
 For `Cons`, `zip:` will dispatch a `zipCons:` method to its argument and delegate its resolution to this receiver: when `Empty` it will be handled by its implementation of `zipCons:` by returning an empty list (case 3) and when not, it will be done by `zipCons:` of `Cons` class by returning a new non-empty list where its head is a `Pair` with the head from each list and the tail is built recursively through zipping (case 4).
 
 
-```smalltalk
+```class.st
 Class {
 	#name : #Cons,
 	#superclass : #List,

@@ -1,0 +1,237 @@
+{
+  "name": "st",
+  "displayName": "Smalltalk",
+  "patterns": [
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#symbols"
+    },
+    {
+      "include": "#generic-symbols"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#numbers-base"
+    },
+    {
+      "include": "#arrays"
+    },
+    {
+      "include": "#bytearrays"
+    },
+    {
+      "include": "#keywords-instances"
+    },
+    {
+      "include": "#keywords-contexts"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#characters"
+    },
+    {
+      "include": "#variable-declarations"
+    },
+    {
+      "include": "#block"
+    }
+  ],
+  "repository": {
+    "keywords-instances": {
+      "patterns": [
+        {
+          "name": "keyword.smalltalk",
+          "match": "\\b(nil|true|false)\\b"
+        }
+      ]
+    },
+    "keywords-contexts": {
+      "patterns": [
+        {
+          "name": "keyword.smalltalk",
+          "match": "\\b(self|super|thisContext)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.single.smalltalk",
+      "begin": "'",
+      "end": "'",
+      "patterns": [
+        {
+          "name": "constant.character.escape.smalltalk",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "symbols": {
+      "name": "constant.other.smalltalk",
+      "match": "(#)[A-Za-z0-9+\\-*/~|,<>=&@?\\\\%:]+"
+    },
+    "generic-symbols": {
+      "name": "constant.other.smalltalk",
+      "begin": "#'",
+      "end": "'"
+    },
+    "characters": {
+      "name": "constant.character.smalltalk",
+      "match": "\\$."
+    },
+    "numbers": {
+      "name": "constant.numeric.smalltalk",
+      "match": "(-?)\\b\\d+(\\.\\d+)?(e(-?)\\d+)?\\b"
+    },
+    "numbers-base": {
+      "name": "constant.numeric.smalltalk",
+      "match": "(-?)\\b(2r[0-1]+(\\.[0-1]+)?|8r[0-8]+(\\.[0-8]+)?|16r[0-9A-F]+(\\.[0-9A-F]+)?)(e(-?)\\d+)?\\b"
+    },
+    "arrays": {
+      "name": "source.smalltalk",
+      "begin": "#\\(",
+      "end": "\\)",
+      "patterns": [
+        {
+          "include": "#strings"
+        },
+        {
+          "include": "#symbols"
+        },
+        {
+          "include": "#generic-symbols"
+        },
+        {
+          "include": "#numbers"
+        },
+        {
+          "include": "#numbers-base"
+        },
+        {
+          "include": "#arrays"
+        },
+        {
+          "include": "#bytearrays"
+        },
+        {
+          "include": "#characters"
+        },
+        {
+          "include": "#keywords-instances"
+        },
+        {
+          "include": "#comments"
+        }
+      ]
+    },
+    "bytearrays": {
+      "name": "source.smalltalk",
+      "begin": "#\\[",
+      "end": "\\]",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#numbers"
+        },
+        {
+          "include": "#numbers-base"
+        }
+      ]
+    },
+    "comments": {
+      "name": "comment.block.smalltalk",
+      "begin": "\"",
+      "end": "\""
+    },
+    "variable-names": {
+      "name": "variable.name.smalltalk",
+      "match": "\\b[a-z][A-Za-z0-9\\-_]*\\b"
+    },
+    "variable-declarations": {
+      "name": "source.smalltalk",
+      "begin": "\\|(?=.*\\|)",
+      "end": "\\|",
+      "patterns": [
+        {
+          "include": "#variable-names"
+        }
+      ]
+    },
+    "block": {
+      "name": "source.smalltalk",
+      "begin": "\\[",
+      "end": "\\]",
+      "patterns": [
+        {
+          "include": "#strings"
+        },
+        {
+          "include": "#symbols"
+        },
+        {
+          "include": "#generic-symbols"
+        },
+        {
+          "include": "#numbers"
+        },
+        {
+          "include": "#numbers-base"
+        },
+        {
+          "include": "#arrays"
+        },
+        {
+          "include": "#bytearrays"
+        },
+        {
+          "include": "#keywords-instances"
+        },
+        {
+          "include": "#keywords-contexts"
+        },
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#characters"
+        },
+        {
+          "include": "#block-params"
+        },
+        {
+          "include": "#variable-declarations"
+        },
+        {
+          "include": "#block"
+        }
+      ]
+    },
+    "block-params": {
+      "name": "source.smalltalk",
+      "begin": "(:)([a-z_][A-Za-z0-9\\-_]*)",
+      "end": "\\|",
+      "beginCaptures": {
+        "2": {
+          "name": "variable.name.smalltalk"
+        }
+      },
+      "patterns": [
+        {
+          "match": "(:)([a-z_][A-Za-z0-9\\-_]*)",
+          "captures": {
+            "2": {
+              "name": "variable.name.smalltalk"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "scopeName": "source.st"
+}

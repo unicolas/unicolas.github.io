@@ -1,0 +1,287 @@
+{
+  "name": "class.st",
+  "displayName": "Smalltalk tonel",
+  "patterns": [
+    {
+      "include": "#type"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#method-definition"
+    },
+    {
+      "include": "#block"
+    }
+  ],
+  "repository": {
+    "type": {
+      "patterns": [
+        {
+          "name": "keyword.smalltalk",
+          "match": "\\b(Class|Trait|Extension)\\b"
+        },
+        {
+          "name": "source.smalltalk",
+          "begin": "{",
+          "end": "}",
+          "patterns": [
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#simple-symbols"
+            },
+            {
+              "include": "#generic-symbols"
+            }
+          ]
+        }
+      ]
+    },
+    "keywords-instances": {
+      "patterns": [
+        {
+          "name": "keyword.smalltalk",
+          "match": "\\b(nil|true|false)\\b"
+        }
+      ]
+    },
+    "keywords-contexts": {
+      "patterns": [
+        {
+          "name": "keyword.smalltalk",
+          "match": "\\b(self|super|thisContext)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.single.smalltalk",
+      "begin": "'",
+      "end": "'",
+      "patterns": [
+        {
+          "name": "constant.character.escape.smalltalk",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "simple-symbols": {
+      "name": "constant.other.smalltalk",
+      "match": "(#)[A-Za-z0-9\\-_\\.\\/:]+"
+    },
+    "symbols": {
+      "name": "constant.other.smalltalk",
+      "match": "(#)[A-Za-z0-9+\\-*/~|,<>=&@?\\\\%:]+"
+    },
+    "generic-symbols": {
+      "name": "constant.other.smalltalk",
+      "begin": "#'",
+      "end": "'"
+    },
+    "characters": {
+      "name": "constant.character.smalltalk",
+      "match": "\\$."
+    },
+    "numbers": {
+      "name": "constant.numeric.smalltalk",
+      "match": "(-?)\\b\\d+(\\.\\d+)?(e(-?)\\d+)?\\b"
+    },
+    "numbers-base": {
+      "name": "constant.numeric.smalltalk",
+      "match": "(-?)\\b(2r[0-1]+(\\.[0-1]+)?|8r[0-8]+(\\.[0-8]+)?|16r[0-9A-F]+(\\.[0-9A-F]+)?)(e(-?)\\d+)?\\b"
+    },
+    "arrays": {
+      "name": "source.smalltalk",
+      "begin": "#\\(",
+      "end": "\\)",
+      "patterns": [
+        {
+          "include": "#strings"
+        },
+        {
+          "include": "#symbols"
+        },
+        {
+          "include": "#generic-symbols"
+        },
+        {
+          "include": "#numbers"
+        },
+        {
+          "include": "#numbers-base"
+        },
+        {
+          "include": "#arrays"
+        },
+        {
+          "include": "#bytearrays"
+        },
+        {
+          "include": "#characters"
+        },
+        {
+          "include": "#keywords-instances"
+        },
+        {
+          "include": "#comments"
+        }
+      ]
+    },
+    "bytearrays": {
+      "name": "source.smalltalk",
+      "begin": "#\\[",
+      "end": "\\]",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#numbers"
+        },
+        {
+          "include": "#numbers-base"
+        }
+      ]
+    },
+    "comments": {
+      "name": "comment.block.smalltalk",
+      "begin": "\"",
+      "end": "\""
+    },
+    "variable-names": {
+      "name": "variable.name.smalltalk",
+      "match": "\\b[a-z][A-Za-z0-9\\-_]*\\b"
+    },
+    "variable-declarations": {
+      "name": "source.smalltalk",
+      "begin": "\\|(?=.*\\|)",
+      "end": "\\|",
+      "patterns": [
+        {
+          "include": "#variable-names"
+        }
+      ]
+    },
+    "method-definition": {
+      "name": "source.smalltalk",
+      "begin": "([A-Z][A-Za-z0-9\\-_]+)\\s+(class(Side)?)?\\s*(>>)\\s*",
+      "end": "(?=\\[)",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.name.class.smalltalk"
+        },
+        "2": {
+          "name": "keyword.other.smalltalk"
+        },
+        "3": {
+          "name": "source.smalltalk"
+        }
+      },
+      "patterns": [
+        {
+          "name": "source.smalltalk",
+          "match": "([a-z][A-Za-z0-9\\-_]*):\\s*([a-z][A-Za-z0-9\\-_]*)",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.smalltalk"
+            },
+            "2": {
+              "name": "variable.name.smalltalk"
+            }
+          }
+        },
+        {
+          "name": "source.smalltalk",
+          "match": "([+\\-*/~|,<>=&@?\\\\%]+)\\s*([a-z][A-Za-z0-9\\-_]*)",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.smalltalk"
+            },
+            "2": {
+              "name": "variable.name.smalltalk"
+            }
+          }
+        },
+        {
+          "name": "entity.name.function",
+          "match": "([a-z][A-Za-z0-9\\-_]*)"
+        },
+        {
+          "include": "#comments"
+        }
+      ]
+    },
+    "block": {
+      "name": "source.smalltalk",
+      "begin": "\\[",
+      "end": "\\]",
+      "patterns": [
+        {
+          "include": "#strings"
+        },
+        {
+          "include": "#symbols"
+        },
+        {
+          "include": "#generic-symbols"
+        },
+        {
+          "include": "#numbers"
+        },
+        {
+          "include": "#numbers-base"
+        },
+        {
+          "include": "#arrays"
+        },
+        {
+          "include": "#bytearrays"
+        },
+        {
+          "include": "#keywords-instances"
+        },
+        {
+          "include": "#keywords-contexts"
+        },
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#characters"
+        },
+        {
+          "include": "#block-params"
+        },
+        {
+          "include": "#variable-declarations"
+        },
+        {
+          "include": "#block"
+        }
+      ]
+    },
+    "block-params": {
+      "name": "source.smalltalk",
+      "begin": "(:)([a-z_][A-Za-z0-9\\-_]*)",
+      "end": "\\|",
+      "beginCaptures": {
+        "2": {
+          "name": "variable.name.smalltalk"
+        }
+      },
+      "patterns": [
+        {
+          "match": "(:)([a-z_][A-Za-z0-9\\-_]*)",
+          "captures": {
+            "2": {
+              "name": "variable.name.smalltalk"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "scopeName": "source.class.st"
+}

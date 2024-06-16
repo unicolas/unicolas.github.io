@@ -50,7 +50,7 @@ IF = ID
 ```
 To bring this encodings to a class, we add an instance variable that will store the data constructor for each instance, either `TRUE` or `FALSE`. Its protocol includes two instance creation methods, `makeTrue` and `makeFalse`, to set the right constructor and the pattern-matching counterpart of the `IF` term, `caseTrue:caseFalse:`.
 
-```smalltalk
+```class.st
 Class {
   #name : #ScottBoolean,
   #superclass : #Object,
@@ -118,7 +118,7 @@ And reducing `SND (PAIR 0 1)`, we get the second:
 
 The `Pair` class is straightforward, the instance creation is done by `makePair:with:` that stores the closure and each projection provides the continuation.
 
-```smalltalk
+```class.st
 Class {
   #name : #ScottPair,
   #superclass : #Object,
@@ -167,7 +167,7 @@ Once more, we find `MAYBE = ID`.
 
 The protocol is set to the instance creation methods `makeNothing` and `makeJust:`, plus `caseNothing:caseJust:` for the pattern-matching `MAYBE`.
 
-```smalltalk
+```class.st
 Class {
   #name : #ScottMaybe,
   #superclass : #Object,
@@ -229,7 +229,7 @@ and how `HEAD (CONS 0 NIL)`:
 
 We'll implement `head` and `tail` in terms of a pattern-matching method `caseNil:caseCons:` we're adding to the protocol.
 
-```smalltalk
+```class.st
 Class {
   #name : #ScottList,
   #superclass : #Object,
@@ -310,7 +310,7 @@ We can apply `FOLDR` to an arbitrary binary function `ADD`, a list with 2 number
 ```
 Since we have direct support for recursion, we have no need to eliminate it for implementing `FOLDR`.
 
-```smalltalk
+```class.st
 ScottList >> foldr: f into: a [
 
   ^self 
@@ -357,7 +357,7 @@ The continuation for `FOLDL` will apply the left fold to the tail and the applic
 ```
 Again, we can implement this fold with recursion:
 
-```smalltalk
+```class.st
 ScottList >> foldl: f into: a [
 
   ^self 
@@ -412,7 +412,7 @@ Note that we need to explicitly pass the fold function so we added it as the par
 
 For the implementation, let's add some variants of `Y″` so we can work with uncurried functions:
 
-```smalltalk
+```class.st
 Class {
 	#name : #Fix,
 	#superclass : #Object
@@ -439,7 +439,7 @@ Fix class >> rec3: f [
 ```
 and then continue with the terms `FOLDR′` and `FOLDL′`:
 
-```smalltalk
+```class.st
 ScottList >> fixFoldl: f into: a [
 
   ^(Fix rec3: [:foldl |
@@ -484,7 +484,7 @@ TAIL = λs. s (λh t. FORCE t)
   →β λs. s (λh t. t (λa. a))
 ```
 Its implementation is like that for `List`, `head` and `tail` now becoming total.
-```smalltalk
+```class.st
 Class {
   #name : #ScottStream,
   #superclass : #Object,
@@ -545,7 +545,7 @@ SCONS 0 (SCONS 1 (FORCE (λd. d (ITERATE (ADD 1) 2))))
  →β SCONS 0 (SCONS 1 (SCONS 2 (λd. d (ITERATE (ADD 1) (3)))))
 ```
 We can implement it using recursion:
-```smalltalk
+```class.st
 ScottStream class >> iterate: f from: a [
 
   ^self makeSCons: a with: [:delay |
@@ -558,7 +558,7 @@ Or through `Y″` as:
 ITERATE′ = Y″ (λi f a. SCONS a (λd. d (i f (f a))))
 ```
 
-```smalltalk
+```class.st
 ScottStream class >> fixIterate: f from: a [
 
   ^(Fix rec2: [:iterate |
@@ -573,7 +573,7 @@ ScottStream class >> fixIterate: f from: a [
 
 Then we could implement a stream consumer like `take` to make a list out of the first n elements produced:
 
-```smalltalk
+```class.st
 ScottStream >> take: n [
   
   ^(n < 1)
@@ -583,7 +583,7 @@ ScottStream >> take: n [
 ```
 For example:
 
-```smalltalk
+```st
 (ScottStream iterate: [:x | x + 1] from: 1) take: 5. "[1, 2, 3, 4, 5]" 
 (ScottStream iterate: [:x | x * 2] from: 1) take: 5. "[1, 2, 4, 8, 16]" 
 (ScottStream iterate: [:x | x] from: 1) take: 5. "[1, 1, 1, 1, 1]" 
@@ -628,7 +628,7 @@ INTERLEAVE = λs1 s2. SCONS (HEAD s1) (DELAY (INTERLEAVE s2 (TAIL s1)))
 ```
 And its implementation is then straightforward:
 
-```smalltalk
+```class.st
 ScottStream >> interleave: s [
 
   ^self class makeSCons: self head with: [:delay |
@@ -657,7 +657,7 @@ where `B1`, `B2` and `B3` are the bodies to evaluate for each case.
 
 The conversion to a class is direct, its protocol will include both data constructors, as instance creation methods, and eliminators (be pattern-matching or projection functions) that will evaluate the data constructor held for each instance.
 
-```smalltalk
+```class.st
 Class {
   #name : #Scott,
   #superclass : #Object,

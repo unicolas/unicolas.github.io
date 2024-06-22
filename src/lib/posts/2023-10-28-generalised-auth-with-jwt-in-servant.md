@@ -7,7 +7,7 @@ tags:
   - jwt
 published: true
 description: 'How-to guide for a customised JWT authentication scheme using generalised auth in Servant.'
-updated: '2024-06-08'
+updated: '2024-06-22'
 ---
 
 [Servant auth server](https://hackage.haskell.org/package/servant-auth-server) provides JWT authentication already but there's no much room for customisation, for example we cannot control expiration times independently of the cookie.
@@ -284,7 +284,7 @@ makeLoginResponse = \case
     toText = pack . toString . encodeCompact
 ```
 
-For the `refreshTokenHandler` we expect the refresh claims to be provided by the `authHandler` or fail otherwise (remember we're getting `Just claims` on success and `Nothing` on failure form this authentication handler function).
+For the `refreshTokenHandler` we expect the refresh claims to be provided by the `authHandler` or fail otherwise (remember we're getting `Just claims` on success and `Nothing` on failure from this authentication handler function).
 We will be constructing a login response with a new access token for the same user we got from the refresh token and for the current time for it to be fresh, in addition to the same refresh token we got since we want it to last for its expiration time. A more comprehensive flow may create a new refresh token each time and invalidate previously used tokens.
 
 ```hs

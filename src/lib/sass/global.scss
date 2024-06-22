@@ -51,7 +51,7 @@ pre {
   tab-size: 2;
   overflow-x: auto;
 }
-pre code {
+:not(.blockquote-details) > pre code {
   counter-reset: step;
   counter-increment: step 0;
 

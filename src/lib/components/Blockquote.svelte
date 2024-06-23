@@ -13,6 +13,6 @@
     margin: 1em 0;
   }
   .blockquote-details {
-    display: inline-block;
+    display: inline-grid;
   }
 </style>

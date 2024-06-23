@@ -10,6 +10,8 @@ description: 'How-to guide for a customised JWT authentication scheme using gene
 updated: '2024-06-22'
 ---
 
+> A sequel of this post dealing with refresh token rotation is [here](2024-06-22-enhanced-auth-with-refresh-token-rotation-in-servant).
+
 [Servant auth server](https://hackage.haskell.org/package/servant-auth-server) provides JWT authentication already but there's no much room for customisation, for example we cannot control expiration times independently of the cookie.
 In order to address some of its limitations we'll be building a JWT authentication scheme on top of Servant's generalised authentication.
 
@@ -311,6 +313,6 @@ securedHandlers _ = throw err401
 
 Bear in mind that Servant's generalised authentication API is considered experimental nowadays. It's simple yet powerful, it gave us the means to work out our particular authentication scheme without any hassle.
 There's one thing we will be missing from Servant auth server and that is its `ThrowAll` typeclass that helps in reducing the boilerplate needed to throw authentication errors for a whole sub-API.
-You can find the full implementation [here](https://github.com/unicolas/example-generalised-auth).
+You can find the full implementation [here](https://github.com/unicolas/example-generalised-auth/tree/v1).
 
 [^1]: If `tag` was to be of kind `Type` we won't be able to use type-level strings since these are of kind `Symbol`.

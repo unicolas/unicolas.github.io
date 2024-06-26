@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="527px" height="341px" version="1.1" viewBox="-.5 -.5 527 341" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="linearGradient122" x1="28.5" x2="500.5" y1="340.5" y2="-.5" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ee5396" offset="0"/>
+      <stop stop-color="#4589ff" offset="1"/>
+    </linearGradient>
+    <linearGradient id="linearGradient124" x2="60" y1="110" y2="80" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient123"/>
+    <linearGradient id="linearGradient123">
+      <stop stop-color="#007d79" offset="0"/>
+      <stop stop-color="#42be65" offset="1"/>
+    </linearGradient>
+    <linearGradient id="linearGradient69" x1="109.5" x2="220.5" y1="110.5" y2="79.5" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient123"/>
+    <linearGradient id="linearGradient70" x1="299" x2="405" y1="110.5" y2="79.5" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient123"/>
+    <linearGradient id="linearGradient71" x1="460" x2="526" y1="110" y2="80" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient123"/>
+    <linearGradient id="linearGradient72" x1="297" x2="407" y1="185" y2="155" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient123"/>
+    <linearGradient id="linearGradient73" x1="115" x2="215" y1="265" y2="235" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient123"/>
+    <linearGradient id="linearGradient74" x1="460" x2="526" y1="265" y2="235" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient123"/>
+    <linearGradient id="linearGradient134" x1="144.29" x2="185.71" y1="190.71" y2="149.29" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1192e8" offset="0"/>
+      <stop stop-color="#007d79" offset="1"/>
+    </linearGradient>
+  </defs>
+  <g data-cell-id="0">
+    <g data-cell-id="1">
+      <g data-cell-id="fstV4fCothiEPNTUPQdp-1">
+        <path d="m500 110v125m0 30v65c0 5.54-4.46 10-10 10h-451c-5.54 0-10-4.46-10-10v-220m0-30v-70c0-5.54 4.46-10 10-10h451c5.54 0 10 4.46 10 10v70" fill="none" stop-color="#000000" stroke="url(#linearGradient122)" />
+        <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="13px">
+          <text x="40.5" y="21.5" font-family="'IBM Plex Sans'" font-size="13px" font-weight="600">Accept refresh token</text>
+        </g>
+      </g>
+      <g data-cell-id="fstV4fCothiEPNTUPQdp-2">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m165 50v20-10 17.76" pointer-events="stroke"/>
+          <path d="m159.5 67.88 5.5 11 5.5-11" pointer-events="all"/>
+        </g>
+      </g>
+      <g data-cell-id="fstV4fCothiEPNTUPQdp-3">
+        <ellipse cx="165" cy="40" rx="10" ry="10" fill="#f4f4f4" pointer-events="all" stroke="#f4f4f4"/>
+      </g>
+      <g data-cell-id="fstV4fCothiEPNTUPQdp-4">
+        <rect y="80" width="60" height="30" fill="none" pointer-events="all" stop-color="#000000" stroke="url(#linearGradient124)" />
+        <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+          <text x="29.5" y="99.5" font-size="13px">token</text>
+        </g>
+      </g>
+      <g data-cell-id="fstV4fCothiEPNTUPQdp-5">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m60 95h47.76" pointer-events="stroke"/>
+          <path d="m97.88 100.5 11-5.5-11-5.5" pointer-events="all"/>
+        </g>
+      </g>
+      <g data-cell-id="fstV4fCothiEPNTUPQdp-6">
+        <rect x="110" y="80" width="110" height="30" rx="5" ry="5" fill="none" pointer-events="all" stop-color="#000000" stroke="url(#linearGradient69)" />
+        <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+          <text x="164.5" y="99.5" font-size="13px">Check blacklist</text>
+        </g>
+      </g>
+      <g data-cell-id="fstV4fCothiEPNTUPQdp-21">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m215 250h242.76" pointer-events="stroke"/>
+          <path d="m447.88 255.5 11-5.5-11-5.5" pointer-events="all"/>
+        </g>
+      </g>
+      <g data-cell-id="fstV4fCothiEPNTUPQdp-22">
+        <rect x="115" y="235" width="100" height="30" rx="5" ry="5" fill="none" pointer-events="all" stop-color="#000000" stroke="url(#linearGradient73)" />
+        <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+          <text x="164.5" y="254.5" font-size="13px">Reject token</text>
+        </g>
+      </g>
+      <g data-cell-id="fstV4fCothiEPNTUPQdp-23">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m352 80v-27.76" pointer-events="stroke"/>
+          <path d="m357.5 62.12-5.5-11-5.5 11" pointer-events="all"/>
+        </g>
+      </g>
+      <g data-cell-id="fstV4fCothiEPNTUPQdp-24">
+        <rect x="299.5" y="80" width="105" height="30" rx="5" ry="5" fill="none" pointer-events="all" stop-color="#000000" stroke="url(#linearGradient70)" />
+        <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+          <text x="351.5" y="99.5" font-size="13px">Accept token</text>
+        </g>
+      </g>
+      <g data-cell-id="fstV4fCothiEPNTUPQdp-25">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m165 265v32.76" pointer-events="stroke"/>
+          <path d="m159.5 287.88 5.5 11 5.5-11" pointer-events="all"/>
+        </g>
+      </g>
+      <g data-cell-id="fstV4fCothiEPNTUPQdp-26">
+        <g pointer-events="all" stroke="#f4f4f4">
+          <ellipse cx="165" cy="310" rx="6" ry="6" fill="#f4f4f4"/>
+          <ellipse cx="165" cy="310" rx="10" ry="10" fill="none"/>
+        </g>
+      </g>
+      <g data-cell-id="fstV4fCothiEPNTUPQdp-27">
+        <rect x="460" y="80" width="66" height="30" fill="none" pointer-events="all" stop-color="#000000" stroke="url(#linearGradient71)" />
+        <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+          <text x="492.5" y="99.5" font-size="13px">true</text>
+        </g>
+      </g>
+      <g data-cell-id="fstV4fCothiEPNTUPQdp-28">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m404.5 95h53.26" pointer-events="stroke"/>
+          <path d="m447.88 100.5 11-5.5-11-5.5" pointer-events="all"/>
+        </g>
+      </g>
+      <g data-cell-id="fstV4fCothiEPNTUPQdp-29">
+        <g pointer-events="all" stroke="#f4f4f4">
+          <ellipse cx="352" cy="40" rx="6" ry="6" fill="#f4f4f4"/>
+          <ellipse cx="352" cy="40" rx="10" ry="10" fill="none"/>
+        </g>
+      </g>
+      <g data-cell-id="fstV4fCothiEPNTUPQdp-30">
+        <rect x="297" y="155" width="110" height="30" rx="5" ry="5" fill="none" pointer-events="all" stop-color="#000000" stroke="url(#linearGradient72)" />
+        <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+          <text x="351.5" y="174.5" font-size="13px">Add to blacklist</text>
+        </g>
+      </g>
+      <g data-cell-id="fstV4fCothiEPNTUPQdp-31">
+        <path d="m165 150 20 20-20 20-20-20z" fill="none" pointer-events="all" stop-color="#000000" stroke="url(#linearGradient134)" stroke-miterlimit="10" />
+      </g>
+      <g data-cell-id="fstV4fCothiEPNTUPQdp-32">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m165 110v37.76" pointer-events="stroke"/>
+          <path d="m159.5 137.88 5.5 11 5.5-11" pointer-events="all"/>
+        </g>
+      </g>
+      <g data-cell-id="fstV4fCothiEPNTUPQdp-33">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m185 170h109.76" pointer-events="stroke"/>
+          <path d="m284.88 175.5 11-5.5-11-5.5" pointer-events="all"/>
+        </g>
+        <g data-cell-id="fstV4fCothiEPNTUPQdp-34">
+          <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+            <text x="236" y="160" font-size="13px">[not blacklisted]</text>
+          </g>
+        </g>
+      </g>
+      <g data-cell-id="fstV4fCothiEPNTUPQdp-36">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m352 155v-42.76" pointer-events="stroke"/>
+          <path d="m357.5 122.12-5.5-11-5.5 11" pointer-events="all"/>
+        </g>
+      </g>
+      <g data-cell-id="fstV4fCothiEPNTUPQdp-39">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m164.71 190v42.76" pointer-events="stroke"/>
+          <path d="m159.21 222.88 5.5 11 5.5-11" pointer-events="all"/>
+        </g>
+        <g data-cell-id="fstV4fCothiEPNTUPQdp-40">
+          <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+            <text x="119.71" y="206" font-size="13px">[blacklisted]</text>
+          </g>
+        </g>
+      </g>
+      <g data-cell-id="fstV4fCothiEPNTUPQdp-45">
+        <rect x="460" y="235" width="66" height="30" fill="none" pointer-events="all" stop-color="#000000" stroke="url(#linearGradient74)" />
+        <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+          <text x="492.5" y="254.5" font-size="13px">false</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

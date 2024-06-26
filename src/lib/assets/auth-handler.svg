@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="591px" height="701px" version="1.1" viewBox="-.5 -.5 591 701" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="linearGradient133">
+      <stop stop-color="#1192e8" offset="0"/>
+      <stop stop-color="#007d79" offset="1"/>
+    </linearGradient>
+    <linearGradient id="linearGradient123">
+      <stop stop-color="#007d79" offset="0"/>
+      <stop stop-color="#42be65" offset="1"/>
+    </linearGradient>
+    <linearGradient id="linearGradient122" x1="28.5" x2="530.5" y1="700.5" y2="-.5" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ee5396" offset="0"/>
+      <stop stop-color="#4589ff" offset="1"/>
+    </linearGradient>
+    <linearGradient id="linearGradient124" x2="60" y1="110" y2="80" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient123"/>
+    <linearGradient id="linearGradient125" x1="104" x2="283.5" y1="110.5" y2="80" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient123"/>
+    <linearGradient id="linearGradient126" x1="136.75" x2="251.75" y1="240" y2="209.5" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient123"/>
+    <linearGradient id="linearGradient127" x1="151.5" x2="237" y1="370" y2="339.5" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient123"/>
+    <linearGradient id="linearGradient128" x1="144" x2="244.5" y1="500" y2="469.5" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient123"/>
+    <linearGradient id="linearGradient129" x1="126" x2="261.5" y1="630.5" y2="600" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient123"/>
+    <linearGradient id="linearGradient130" x1="494" x2="560.5" y1="630" y2="599.5" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient123"/>
+    <linearGradient id="linearGradient131" x1="315.5" x2="448" y1="370.5" y2="340" gradientTransform="translate(-6)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient123"/>
+    <linearGradient id="linearGradient132" x1="500" x2="597.07" y1="370" y2="339.22" gradientTransform="translate(-6)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient123"/>
+    <linearGradient id="linearGradient134" x1="173.29" x2="214.71" y1="180.71" y2="139.29" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient133"/>
+    <linearGradient id="linearGradient135" x1="173.29" x2="214.71" y1="310.71" y2="269.29" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient133"/>
+    <linearGradient id="linearGradient136" x1="173.29" x2="214.71" y1="440.71" y2="399.29" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient133"/>
+    <linearGradient id="linearGradient137" x1="173.29" x2="214.71" y1="570.71" y2="529.29" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient133"/>
+  </defs>
+  <g data-cell-id="0">
+    <g data-cell-id="1">
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-21">
+        <path d="m530 630v60c0 5.54-4.46 10-10 10h-481c-5.54 0-10-4.46-10-10v-580m0-30v-70c0-5.54 4.46-10 10-10h481c5.54 0 10 4.46 10 10v330m0 30v230" fill="none" stroke="url(#linearGradient122)"/>
+        <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="13px">
+          <text x="40.5" y="23.5" font-weight="600">Handle Authorization</text>
+        </g>
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-32">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m194 50v20-10 17.76" pointer-events="stroke"/>
+          <path d="m188.5 67.88 5.5 11 5.5-11" pointer-events="all"/>
+        </g>
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-31">
+        <ellipse cx="194" cy="40" rx="10" ry="10" fill="#f4f4f4" pointer-events="all" stroke="#f4f4f4"/>
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-26">
+        <rect y="80" width="60" height="30" fill="none" pointer-events="all" stroke="url(#linearGradient124)"/>
+        <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+          <text x="29.5" y="99.5" font-size="13px">request</text>
+        </g>
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-34">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m60 95h42.26" pointer-events="stroke"/>
+          <path d="m92.38 100.5 11-5.5-11-5.5" pointer-events="all"/>
+        </g>
+      </g>
+      <g data-cell-id="InFhD_hl8_07bmVqjl9l-1">
+        <rect x="104.5" y="80" width="179" height="30" fill="none" pointer-events="all" stop-color="#000000" stroke="url(#linearGradient125)" />
+        <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+          <text x="193.5" y="99.5" font-size="13px">Lookup authorization header</text>
+        </g>
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-11">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m194 440v20-10 17.76" pointer-events="stroke"/>
+          <path d="m188.5 457.88 5.5 11 5.5-11" pointer-events="all"/>
+        </g>
+        <g data-cell-id="npyx_4c3P5EXbFrHUeHD-12">
+          <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+            <text x="164" y="455" font-size="13px">[valid]</text>
+          </g>
+        </g>
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-6">
+        <path d="m194 400 20 20-20 20-20-20z" fill="none" pointer-events="all" stop-color="#000000" stroke="url(#linearGradient136)" stroke-miterlimit="10" />
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-10">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m194 370v20-10 17.76" pointer-events="stroke"/>
+          <path d="m188.5 387.88 5.5 11 5.5-11" pointer-events="all"/>
+        </g>
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-7">
+        <rect x="151.5" y="340" width="85" height="30" rx="5" ry="5" fill="none" pointer-events="all" stop-color="#000000" stroke="url(#linearGradient127)" />
+        <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+          <text x="193.5" y="359.5" font-size="13px">Verify token</text>
+        </g>
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-8">
+        <rect x="144" y="470" width="100" height="30" rx="5" ry="5" fill="none" pointer-events="all" stop-color="#000000" stroke="url(#linearGradient128)" />
+        <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+          <text x="193.5" y="489.5" font-size="13px">Accept token</text>
+        </g>
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-14">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m194 570v20-10 17.76" pointer-events="stroke"/>
+          <path d="m188.5 587.88 5.5 11 5.5-11" pointer-events="all"/>
+        </g>
+        <g data-cell-id="npyx_4c3P5EXbFrHUeHD-15">
+          <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+            <text x="154" y="582" font-size="13px">[accepted]</text>
+          </g>
+        </g>
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-16">
+        <path d="m194 530 20 20-20 20-20-20z" fill="none" pointer-events="all" stop-color="#000000" stroke="url(#linearGradient137)" stroke-miterlimit="10" />
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-17">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m194 500v20-10 17.76" pointer-events="stroke"/>
+          <path d="m188.5 517.88 5.5 11 5.5-11" pointer-events="all"/>
+        </g>
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-39">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m214 420h69v-65h24.76" pointer-events="stroke"/>
+          <path d="m297.88 360.5 11-5.5-11-5.5" pointer-events="all"/>
+        </g>
+        <g data-cell-id="npyx_4c3P5EXbFrHUeHD-41">
+          <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+            <text x="247" y="411" font-size="13px">[invalid]</text>
+          </g>
+        </g>
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-40">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m214 550h132v-177.76" pointer-events="stroke"/>
+          <path d="m351.5 382.12-5.5-11-5.5 11" pointer-events="all"/>
+        </g>
+        <g data-cell-id="npyx_4c3P5EXbFrHUeHD-44">
+          <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+            <text x="262" y="541" font-size="13px">[rejected]</text>
+          </g>
+        </g>
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-69">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m442 355h49.76" pointer-events="stroke"/>
+          <path d="m481.88 360.5 11-5.5-11-5.5" pointer-events="all"/>
+        </g>
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-42">
+        <rect x="310" y="340" width="132" height="30" rx="5" ry="5" fill="none" pointer-events="all" stop-color="#000000" stroke="url(#linearGradient131)" />
+        <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+          <text x="375.5" y="359.5" font-size="13px">Reject authorization</text>
+        </g>
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-77">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m194 630v20-8 17.76" pointer-events="stroke"/>
+          <path d="m188.5 649.88 5.5 11 5.5-11" pointer-events="all"/>
+        </g>
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-43">
+        <rect x="126.5" y="600" width="135" height="30" rx="5" ry="5" fill="none" pointer-events="all" stop-color="#000000" stroke="url(#linearGradient129)" />
+        <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+          <text x="193.5" y="619.5" font-size="13px">Accept authorization</text>
+        </g>
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-79">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m406 370v26.76" pointer-events="stroke"/>
+          <path d="m400.5 386.88 5.5 11 5.5-11" pointer-events="all"/>
+        </g>
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-80">
+        <g pointer-events="all" stroke="#f4f4f4">
+          <ellipse cx="406" cy="409" rx="6" ry="6" fill="#f4f4f4"/>
+          <ellipse cx="406" cy="409" rx="10" ry="10" fill="none"/>
+        </g>
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-70">
+        <rect x="494" y="600" width="66" height="30" fill="none" pointer-events="all" stop-color="#000000" stroke="url(#linearGradient130)" />
+        <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+          <text x="526.5" y="619.5" font-size="13px">claims</text>
+        </g>
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-74">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m261.5 615h230.26" pointer-events="stroke"/>
+          <path d="m481.88 620.5 11-5.5-11-5.5" pointer-events="all"/>
+        </g>
+      </g>
+      <g data-cell-id="npyx_4c3P5EXbFrHUeHD-76">
+        <g pointer-events="all" stroke="#f4f4f4">
+          <ellipse cx="194" cy="672" rx="6" ry="6" fill="#f4f4f4"/>
+          <ellipse cx="194" cy="672" rx="10" ry="10" fill="none"/>
+        </g>
+      </g>
+      <g data-cell-id="InFhD_hl8_07bmVqjl9l-27">
+        <rect x="136.75" y="210" width="114.5" height="30" rx="5" ry="5" fill="none" pointer-events="all" stop-color="#000000" stroke="url(#linearGradient126)" />
+        <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+          <text x="193.5" y="229.5" font-size="13px">Validate scheme</text>
+        </g>
+      </g>
+      <g data-cell-id="InFhD_hl8_07bmVqjl9l-28">
+        <path d="m194 140 20 20-20 20-20-20z" fill="none" pointer-events="all" stroke="url(#linearGradient134)" stroke-miterlimit="10"/>
+      </g>
+      <g data-cell-id="InFhD_hl8_07bmVqjl9l-29">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m194 110v20-10 17.76" pointer-events="stroke"/>
+          <path d="m188.5 127.88 5.5 11 5.5-11" pointer-events="all"/>
+        </g>
+      </g>
+      <g data-cell-id="InFhD_hl8_07bmVqjl9l-30">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m194 180v27.76" pointer-events="stroke"/>
+          <path d="m188.5 197.88 5.5 11 5.5-11" pointer-events="all"/>
+        </g>
+        <g data-cell-id="InFhD_hl8_07bmVqjl9l-31">
+          <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+            <text x="166" y="192" font-size="13px">[found]</text>
+          </g>
+        </g>
+      </g>
+      <g data-cell-id="InFhD_hl8_07bmVqjl9l-33">
+        <path d="m194 270 20 20-20 20-20-20z" fill="none" pointer-events="all" stop-color="#000000" stroke="url(#linearGradient135)" stroke-miterlimit="10" />
+      </g>
+      <g data-cell-id="InFhD_hl8_07bmVqjl9l-34">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m194 240v20-10 17.76" pointer-events="stroke"/>
+          <path d="m188.5 257.88 5.5 11 5.5-11" pointer-events="all"/>
+        </g>
+      </g>
+      <g data-cell-id="InFhD_hl8_07bmVqjl9l-35">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m194 310v27.76" pointer-events="stroke"/>
+          <path d="m188.5 327.88 5.5 11 5.5-11" pointer-events="all"/>
+        </g>
+        <g data-cell-id="InFhD_hl8_07bmVqjl9l-36">
+          <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+            <text x="156" y="323" font-size="13px">[= Bearer]</text>
+          </g>
+        </g>
+      </g>
+      <g data-cell-id="InFhD_hl8_07bmVqjl9l-78">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m214 160h192v177.76" pointer-events="stroke"/>
+          <path d="m400.5 327.88 5.5 11 5.5-11" pointer-events="all"/>
+        </g>
+        <g data-cell-id="InFhD_hl8_07bmVqjl9l-79">
+          <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+            <text x="261" y="152" font-size="13px">[not found]</text>
+          </g>
+        </g>
+      </g>
+      <g data-cell-id="InFhD_hl8_07bmVqjl9l-80">
+        <g fill="none" stroke="#f4f4f4" stroke-miterlimit="10">
+          <path d="m214 290h132v47.76" pointer-events="stroke"/>
+          <path d="m340.5 327.88 5.5 11 5.5-11" pointer-events="all"/>
+        </g>
+        <g data-cell-id="InFhD_hl8_07bmVqjl9l-81">
+          <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+            <text x="262" y="281" font-size="13px">[≠ Bearer]</text>
+          </g>
+        </g>
+      </g>
+      <g data-cell-id="InFhD_hl8_07bmVqjl9l-128">
+        <g data-cell-id="npyx_4c3P5EXbFrHUeHD-68">
+          <path transform="rotate(270,580,346)" d="m574 336 12 10-12 10z" fill="none" pointer-events="all" stop-color="#000000" stroke="url(#linearGradient131)" />
+        </g>
+        <g data-cell-id="npyx_4c3P5EXbFrHUeHD-61">
+          <rect x="494" y="340" width="66" height="30" fill="none" pointer-events="all" stop-color="#000000" stroke="url(#linearGradient132)" />
+          <g fill="#f4f4f4" font-family='"IBM Plex Sans"' font-size="12px" text-anchor="middle">
+            <text x="526.5" y="359.5" font-size="13px">rejection</text>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

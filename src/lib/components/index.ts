@@ -14,4 +14,5 @@ export { default as Table } from './Table.svelte';
 export { default as Tag } from './Tag.svelte';
 export { default as TagGroup } from './TagGroup.svelte';
 export { default as UnorderedList } from './UnorderedList.svelte';
+export { default as Graphic } from './Graphic.svelte';
 export * from './Header';

@@ -11,7 +11,8 @@ updated: '2024-06-12'
 ---
 
 <script>
-	import img from '$lib/assets/object-algebra.png';
+  import img from '$lib/assets/object-algebra.svg?raw';
+  import { Graphic } from '$lib/components';
 </script>
 
 Object algebras are presented as a solution to the [expression problem](https://en.wikipedia.org/wiki/Expression_problem) in object-oriented programming, that is they allow extensibility in terms of representation and operations without modifying existing code. They define the abstract syntax of a language as *a generic abstract factory*.
@@ -167,7 +168,7 @@ Again, we see that when we added another representation we did not need to alter
 
 We can visualise the structure of the solution as three independent modules with the following diagram:
 
-![Class diagram for the language implementation]({img})
+<Graphic>{@html img}</Graphic>
 
 In the top left is the initial implementation with two operations (`lit` and `add`) and the first interpreter (`eval`), in the top right a new interpreter (`print`) and at the bottom a new operation (`neg`). All achieved by extension.
 

@@ -10,9 +10,10 @@ description: 'A follow-up of the how-to guide using generalised auth in Servant 
 ---
 
 <script>
-	import authHandler from '$lib/assets/auth-handler.png';
-	import acceptAccess from '$lib/assets/accept-access-token.png';
-	import acceptRefresh from '$lib/assets/accept-refresh-token.png';
+	import authHandler from '$lib/assets/auth-handler.svg?raw';
+	import acceptAccess from '$lib/assets/accept-access-token.svg?raw';
+	import acceptRefresh from '$lib/assets/accept-refresh-token.svg?raw';
+  import { Graphic } from '$lib/components';
 </script>
 
 In [a previous post](2023-10-28-generalised-auth-with-jwt-in-servant) we implemented a JWT authentication scheme using generalised authentication in Servant providing a short-lived access token on login for the protected endpoints and a long-lived refresh token to get new access tokens once they expire, as a better alternative to a single long-lived access token.
@@ -20,7 +21,7 @@ Yet we can take security a bit further if we minimise the chances of compromisin
 
 Now we have this new piece of information: a token may be revoked and, consequently, be invalid. Then we need to perform a check against this condition before resolving the authentication. Recall this process is performed by the authentication handler function and can be represented in the following activity with the addition of this check we're calling &ldquo;accept&rdquo;:
 
-![Activity diagram for the authentication handler]({authHandler})
+<Graphic>{@html authHandler}</Graphic>
 
 There may be several approaches to this, but at the end all we want is to be able to inject any post-verification action into the authentication handler in the most general way.
 
@@ -126,7 +127,7 @@ Next, we have to see what accept functions we need to pass for both of the two h
 
 Accepting access tokens is straightforward: since we are not revoking them, they must be accepted every time.
 
-![Activity diagram for accept access]({acceptAccess})
+<Graphic>{@html acceptAccess}</Graphic>
 
 So for those tokens we just `pass`:
 
@@ -137,7 +138,7 @@ pass _ = pure True
 
 With refresh tokens it gets a little more interesting: we first need to check if this token was revoked and also revoke it in case it wasn't, note that the refresh token has already been used once we got here so it is safe to state at this point it should not be reused. For this purpose we have to keep a blacklist of tokens.
 
-![Activity diagram for accept refresh]({acceptRefresh})
+<Graphic>{@html acceptRefresh}</Graphic>
 
 This time we get to `revoke`:
 

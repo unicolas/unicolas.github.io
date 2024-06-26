@@ -95,3 +95,12 @@ hr {
 td code {
   @include type.type-style('code-01');
 }
+.cds--inline-notification--low-contrast.cds--inline-notification--blockquote {
+  max-width: unset;
+  margin: 1em 0;
+  border-left: 3px solid theme.$border-strong-01;
+  background: theme.$layer-01;
+}
+.cds--inline-notification--low-contrast.cds--inline-notification--blockquote::before {
+  border: none;
+}

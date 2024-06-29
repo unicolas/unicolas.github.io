@@ -4,11 +4,7 @@
 </script>
 
 {#if href}
-  <a {href}
-    ><span class="tag cds--tag cds--tag--outline cds--tag--interactive"
-      >{name}</span
-    ></a
-  >
+  <a {href}><span class="tag cds--tag cds--tag--selectable">{name}</span></a>
 {:else}
   <span class="tag cds--tag cds--tag--sm cds--layout--size-sm cds--tag--gray"
     >{name}</span

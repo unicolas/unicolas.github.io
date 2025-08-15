@@ -1,7 +1,11 @@
 <script lang="ts">
-  export let href: string;
-  export let title: string;
-  export let active = false;
+  interface Props {
+    href: string;
+    title: string;
+    active?: boolean;
+  }
+
+  let { href, title, active = false }: Props = $props();
 </script>
 
 <li>

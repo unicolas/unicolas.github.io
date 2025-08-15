@@ -1,6 +1,10 @@
 <script lang="ts">
-  export let href: string | undefined = undefined;
-  export let name: string;
+  interface Props {
+    href?: string | undefined;
+    name: string;
+  }
+
+  let { href = undefined, name }: Props = $props();
 </script>
 
 {#if href}

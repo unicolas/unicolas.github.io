@@ -1,8 +1,15 @@
 <script lang="ts">
-  export let href: string;
+  import type { Snippet } from "svelte";
+
+  interface Props {
+    href: string;
+    children?: Snippet;
+  }
+
+  let { href, children }: Props = $props();
 </script>
 
-<a {href} class="cds--link heading"><slot /></a>
+<a {href} class="cds--link heading">{@render children?.()}</a>
 
 <style lang="scss">
   @use '@carbon/styles/scss/type';

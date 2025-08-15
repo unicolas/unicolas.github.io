@@ -1,13 +1,21 @@
 <script lang="ts">
-  import type { CarbonIcon } from 'carbon-icons-svelte';
+  import type { CarbonIconProps } from 'carbon-icons-svelte';
+  import type { Component } from 'svelte';
 
-  export let href: string;
-  export let icon: typeof CarbonIcon;
+  interface Props {
+    href: string;
+    icon: Component<CarbonIconProps>;
+    [key: string]: any
+  }
+
+  let { href, icon, ...rest }: Props = $props();
+
+  const SvelteComponent = $derived(icon);
 </script>
 
 <a
   {href}
-  {...$$restProps}
+  {...rest}
   class="cds--header__action cds--btn cds--btn--primary cds--btn--icon-only"
-  ><svelte:component this={icon} size={20} /></a
+  ><SvelteComponent size={20} /></a
 >

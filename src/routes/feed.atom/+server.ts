@@ -1,33 +1,32 @@
-import { base } from '$app/paths';
+import { resolve } from '$app/paths';
 import { lastUpdated } from '$lib/helpers';
 import type { Post } from '$lib/types';
 import { DOMAIN } from '$env/static/private';
+import type { RequestHandler } from '@sveltejs/kit';
 
 export const prerender = true;
 
-export const GET = async ({ fetch }) => {
-  const response = await fetch(`${base}/api/posts`);
+export const GET: RequestHandler = async ({ fetch }) => {
+  const response = await fetch(resolve('/api/posts'));
   const posts: Post[] = await response.json();
   const updated = lastUpdated(posts);
   const feed = `<?xml version="1.0" encoding="utf-8"?>
   <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Blog | Nicolás Urquiola</title>
-    <link rel="self" href="https://${DOMAIN}${base}/feed.atom" />
+    <link rel="self" href="https://${DOMAIN}${resolve('/feed.atom')}" />
     <updated>${new Date(updated).toISOString()}</updated>
     <author>
       <name>Nicolás Urquiola</name>
     </author>
-    <id>https://${DOMAIN}${base}</id>
+    <id>https://${DOMAIN}${resolve('/')}</id>
     ${posts
       .map(
-        (post) => `
+        ({ title, slug, updated, date }) => `
     <entry>
-      <title>${post.title}</title>
-      <id>https://${DOMAIN}${base}/blog/${post.slug}</id>
-      <link href="https://${DOMAIN}${base}/blog/${
-          post.slug
-        }" type="text/html" />
-      <updated>${new Date(post.updated ?? post.date).toISOString()}</updated>
+      <title>${title}</title>
+      <id>https://${DOMAIN}${resolve('/blog/[slug]', { slug })}</id>
+      <link href="https://${DOMAIN}${resolve('/blog/[slug]', { slug })}" type="text/html" />
+      <updated>${new Date(updated ?? date).toISOString()}</updated>
     </entry>`
       )
       .join('')}

@@ -1,7 +1,11 @@
 <script lang="ts">
   import { Heading, PostList } from '$lib/components';
 
-  export let data;
+  interface Props {
+    data: any;
+  }
+
+  let { data }: Props = $props();
 </script>
 
 <svelte:head>

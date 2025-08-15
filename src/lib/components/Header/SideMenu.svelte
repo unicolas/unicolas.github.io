@@ -1,5 +1,12 @@
 <script lang="ts">
-  export let open = false;
+  import type { Snippet } from 'svelte';
+
+  interface Props {
+    open?: boolean;
+    children?: Snippet;
+  }
+
+  let { open = false, children }: Props = $props();
 </script>
 
 <nav
@@ -7,6 +14,6 @@
   class:cds--side-nav--expanded={open}
 >
   <ul class="cds--side-nav__header-navigation">
-    <slot />
+    {@render children?.()}
   </ul>
 </nav>

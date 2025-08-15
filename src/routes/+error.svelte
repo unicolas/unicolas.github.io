@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { base } from '$app/paths';
-  import { page } from '$app/stores';
+  import { resolve } from '$app/paths';
+  import { page } from '$app/state';
   import { Heading } from '$lib/components';
   import { ArrowLeft } from 'carbon-icons-svelte';
 </script>
 
 <Heading
-  ><span class="status">{$page.status}</span> {$page.error?.message}</Heading
+  ><span class="status">{page.status}</span> {page.error?.message}</Heading
 >
-<a href="{base}/" class="cds--link">
+<a href="{resolve('/')}" class="cds--link">
   Back to home
   <span class="cds--link__icon">
     <ArrowLeft />

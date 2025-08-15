@@ -1,11 +1,14 @@
 import adapter from '@sveltejs/adapter-static';
-import { mdsvex, escapeSvelte } from 'mdsvex';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import { bundledLanguages, createHighlighter } from 'shiki';
 import fs from 'fs';
+import { escapeSvelte, mdsvex } from 'mdsvex';
+import { dirname, resolve } from 'path';
 import remarkFootnotes from 'remark-footnotes';
+import { bundledLanguages, createHighlighter } from 'shiki';
+import { fileURLToPath } from 'url';
 
 const dev = process.argv.includes('dev');
+const dir = dirname(fileURLToPath(import.meta.url));
 
 const highlighter = await createHighlighter({
   themes: [JSON.parse(fs.readFileSync('./carbon.json', 'utf-8'))],
@@ -36,7 +39,7 @@ const config = {
         }
       },
       smartypants: { quotes: false },
-      layout: './src/routes/layout.md.svelte',
+      layout: resolve(dir, 'src/routes/layout.md.svelte'),
       remarkPlugins: [remarkFootnotes]
     })
   ],

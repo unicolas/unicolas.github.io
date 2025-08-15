@@ -1,4 +1,9 @@
-<script context="module">
+<script>
+  /** @type {{children?: import('svelte').Snippet}} */
+  let { children } = $props();
+</script>
+
+<script module>
   import {
     Image as img,
     Link as a,
@@ -11,4 +16,4 @@
   export { a, blockquote, img, li, ol, ul, table };
 </script>
 
-<slot />
+{@render children?.()}

@@ -696,4 +696,4 @@ The source code with the implementation for all the presented ADTs can be found 
 [^1]: [Pharo](https://pharo.org) in [tonel](https://github.com/pharo-vcs/tonel) file format.
 [^2]: Where `→α` stands for *α-conversion*, `→β` for *β-reduction*, `→δ` for *δ-reduction*. `→η` *η-reduction* and `→*` for multiple-step reductions.
 [^3]: This type is also called `Option` and its constructors `None` and `Some`.
-[^4]: Often found as *Z* or *Y<sub>CBV<sub>*.
+[^4]: Often found as *Z* or *Y<sub>CBV</sub>*.

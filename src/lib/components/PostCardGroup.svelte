@@ -1,10 +1,14 @@
 <script lang="ts">
-  import { base } from '$app/paths';
+  import { resolve } from '$app/paths';
   import type { Post } from '$lib/types';
   import { ArrowRight } from 'carbon-icons-svelte';
   import { PostCard } from '.';
 
-  export let posts: Post[];
+  interface Props {
+    posts: Post[];
+  }
+
+  let { posts }: Props = $props();
 </script>
 
 <div class="card-group">
@@ -18,7 +22,7 @@
     {/each}
   </div>
   <div class="show-more-link">
-    <a href={`${base}/blog`} class="cds--link"
+    <a href={resolve('/blog')} class="cds--link"
       >More posts<ArrowRight class="cds--link__icon" /></a
     >
   </div>

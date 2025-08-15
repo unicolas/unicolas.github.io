@@ -5,7 +5,11 @@
   import { formattedDate } from '$lib/helpers';
   import { base } from '$app/paths';
 
-  export let post: Post;
+  interface Props {
+    post: Post;
+  }
+
+  let { post }: Props = $props();
 </script>
 
 <a class="cds--tile cds--tile--clickable card" href="{base}/blog/{post.slug}">

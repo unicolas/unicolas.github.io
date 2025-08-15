@@ -1,9 +1,16 @@
 <script lang="ts">
-  export let size: 'md' | 'sm' = 'md';
+  import type { Snippet } from "svelte";
+
+  interface Props {
+    size?: 'md' | 'sm';
+    children?: Snippet;
+  }
+
+  let { size = 'md', children }: Props = $props();
 </script>
 
 <div class="heading {size === 'md' ? 'heading-md' : 'heading-sm'}">
-  <slot />
+  {@render children?.()}
 </div>
 
 <style lang="scss">

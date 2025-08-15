@@ -1,9 +1,13 @@
 <script lang="ts">
-  import { base } from '$app/paths';
+  import { resolve } from '$app/paths';
   import { Eyebrow, Heading, Tag, TagGroup } from '$lib/components';
   import { formattedDate } from '$lib/helpers';
 
-  export let data;
+  interface Props {
+    data: any;
+  }
+
+  let { data }: Props = $props();
   const title = `${data.meta.title} | Nicolás Urquiola`;
   const description = `${data.meta.description} ${data.meta.tags.join(', ')}`;
 </script>
@@ -21,12 +25,12 @@
     <Heading>{data.meta.title}</Heading>
     <TagGroup>
       {#each data.meta.tags as tag}
-        <Tag href={`${base}/blog/tags/${tag}`} name={tag} />
+        <Tag href={resolve('/blog/tags/[tag]', {tag})} name={tag} />
       {/each}
     </TagGroup>
   </div>
   <div class="body-wrapper">
-    <svelte:component this={data.content} />
+    <data.content />
   </div>
 </article>
 
